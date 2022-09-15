@@ -4,9 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MemoryMemberRepository implements MemberRepository{
-
     private static Map<Long, Member> store = new HashMap<>(); //실제로는 해쉬맵안씀 동시성 문제떄문에 ConcurrentHashMap쓴다
-
     @Override
     public void save(Member member) {
         store.put(member.getId(), member);
